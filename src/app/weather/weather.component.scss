@@ -1,0 +1,228 @@
+// Define variables for colors and spacing
+$background-color: #f0f4f8;
+$card-background-color: rgba(167, 235, 238, 0.119);
+$border-color: #e0e0e0a4;
+$shadow-color: rgba(0, 0, 0, 0.4);
+$text-color: #333333;
+$highlight-color: #009688;
+$font-family: 'Roboto', sans-serif;
+$border-radius: 8px;
+$padding: 20px;
+$spacing: 16px;
+$icon-size: 60px;
+$hour-item-width: 80px;
+$hourly-background-color:#ffffff;
+$hover-background-color:#0a4e475c;
+
+#logo {
+  display: flex; /* Enable Flexbox layout */
+  align-items: center; /* Vertically center items */
+  margin-bottom: 20px; /* Space below the logo section */
+}
+
+#logo-image {
+  width: 150px; /* Adjust the width of the logo */
+  height: auto; /* Maintain the aspect ratio */
+  margin-right:0; /* Space between the logo and the text */
+}
+
+#logo h2 {
+  font-size: 2rem; /* Adjust font size as needed */
+  color: #111111; /* Set text color */
+  font-family: Arial, sans-serif; /* Set font family */
+  font-weight: bold; /* Make the text bold */
+  margin: 0; /* Remove default margin */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Optional: Add a text shadow for better readability */
+}
+
+
+
+
+
+
+// Main container styling
+#weather-container {
+  max-width: 65%;
+  margin: auto;
+  padding: $padding;
+  background-color: $card-background-color;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 8px $shadow-color;
+  font-family: $font-family;
+  text-align: center;
+  margin-top: 0%;
+  
+  
+
+  // Header styling
+  h2 {
+    margin-bottom: $spacing;
+    color: $highlight-color;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  // Input and button styling
+  input[type="text"] {
+    padding: $spacing;
+    border-radius: $border-radius;
+    border: 1px solid $border-color;
+    font-size: 1rem;
+    width: calc(100% - 120px);
+    max-width: 400px;
+    margin-right: 10px;
+  }
+
+  button {
+    padding: $spacing;
+    border: none;
+    border-radius: $border-radius;
+    background-color: $highlight-color;
+    color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($highlight-color, 10%);
+    }
+  }
+
+  // Weather info styling
+  #weather-info {
+    margin: $spacing 0;
+    color: $text-color;
+
+    p {
+      margin: 5px 0;
+      font-size: 1.2rem;
+    }
+  }
+
+  // Weather icon and temperature styling
+  #temp-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: $spacing;
+
+    img#weather-icon {
+      width: $icon-size;
+      height: $icon-size;
+      margin-right: $spacing;
+      object-fit: contain;
+    }
+
+    span.temperature {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: $highlight-color;
+    }
+  }
+
+  // Hourly forecast styling
+
+    
+
+   
+  
+// Hourly forecast container styling
+#hourly-forecast {
+    margin-top: $spacing;
+    display: flex;
+    flex-direction: row; // Align items horizontally
+    flex-wrap: wrap; // Allow items to wrap to the next line if they exceed container width
+    gap: $spacing;
+    justify-content: center; // Center items horizontally
+    padding: $spacing;
+  
+    .hourly-item {
+      display: flex;
+      flex-direction: column; // Stack icon and text vertically
+      align-items: center;
+      justify-content: center;
+      width: $hour-item-width; // Fixed width for consistency
+      padding: $spacing / 2;
+      border-radius: $border-radius;
+      background-color: $hourly-background-color;
+      border: 1px solid $border-color;
+      box-shadow: 0 2px 4px $shadow-color;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+  
+      &:hover {
+        background-color: lighten($hover-background-color, 5%);
+        transform: scale(1.1);
+      }
+  
+      // Align the icon and text
+      img {
+        width: $icon-size;
+        height: $icon-size;
+        object-fit: contain;
+        margin-bottom: $spacing / 2;
+      }
+  
+      span {
+        font-size: 0.875rem; // Smaller font size for spans
+        color: $text-color;
+        display: block; // Ensures each span is on its own line
+      }
+  
+      .hour-time, .hour-temp {
+        width: 100%; // Make sure spans take up full width of the container
+        text-align: center; // Center-align text
+        font-weight: 500;
+      }
+  
+      .hour-temp {
+        font-weight: 700;
+        color: $highlight-color;
+      }
+    }
+  }
+  #daily-forecast {
+    margin-top: 20px;
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .daily-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #00968730;
+      margin-bottom: 10px;
+
+      .day-date {
+        width: 100px;
+        text-align: left;
+        font-weight: bold;
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+      }
+
+      .day-temp {
+        width: 80px;
+        text-align: right;
+        color:#00413b;
+      }
+
+      .day-desc {
+        width: 150px;
+        text-align: right;
+        font-style: italic;
+      }
+    }
+  }
+  
+ 
+}

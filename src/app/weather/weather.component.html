@@ -1,0 +1,38 @@
+<div id="logo">
+  <img src="assets/Abstract_cloud_logo_design__Storage-removebg-preview.png" alt="Logo" id="logo-image">
+  <h2>AeroForecast</h2>
+</div>
+<div id="weather-container">
+    <h2>Weather </h2>
+    <input type="text" id="city" placeholder="Enter city">
+    <button (click)="getWeather()">Search</button>
+  
+    <div id="temp-div">
+      <img id="weather-icon" alt="Weather Icon" [src]="weatherIconUrl" *ngIf="weatherIconUrl">
+      <span class="temperature">{{ temperature }}°C</span>
+    </div>
+  
+    <div id="weather-info">
+      <p>{{ cityName }}</p>
+      <p>{{ description }}</p>
+    </div>
+  
+    <div id="hourly-forecast">
+        <div *ngFor="let hour of hourlyForecast" class="hourly-item">
+          <span class="hour-time">{{ hour.time }}:00</span>
+          <img [src]="hour.iconUrl" alt="Hourly Weather Icon">
+          <span class="hour-temp">{{ hour.temperature }}°C</span>
+        </div>
+    </div>
+
+    <div id="daily-forecast" *ngIf="dailyForecast.length > 0">
+      <h3>7-Day Forecast</h3>
+      <div *ngFor="let day of dailyForecast" class="daily-item">
+        <span class="day-date">{{ day.date }}</span>
+        <img [src]="day.iconUrl" alt="Daily Weather Icon">
+        <span class="day-temp">{{ day.temperature }}°C</span>
+        <span class="day-desc">{{ day.description }}</span>
+      </div>
+    </div>
+</div>
+  
